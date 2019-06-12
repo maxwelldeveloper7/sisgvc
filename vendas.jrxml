@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vendas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     vw_pedidos."id" AS vw_pedidos_id,
+     vw_pedidos."cd_equipe" AS vw_pedidos_cd_equipe,
+     vw_pedidos."no_equipe" AS vw_pedidos_no_equipe,
+     vw_pedidos."cd_cliente" AS vw_pedidos_cd_cliente,
+     vw_pedidos."no_cliente" AS vw_pedidos_no_cliente,
+     vw_pedidos."rg_cliente" AS vw_pedidos_rg_cliente,
+     vw_pedidos."cpf_cliente" AS vw_pedidos_cpf_cliente,
+     vw_pedidos."dt_nascimento" AS vw_pedidos_dt_nascimento,
+     vw_pedidos."lged_cliente" AS vw_pedidos_lged_cliente,
+     vw_pedidos."nred_cliente" AS vw_pedidos_nred_cliente,
+     vw_pedidos."bred_cliente" AS vw_pedidos_bred_cliente,
+     vw_pedidos."uf" AS vw_pedidos_uf,
+     vw_pedidos."no_cidade" AS vw_pedidos_no_cidade,
+     vw_pedidos."cep_cliente" AS vw_pedidos_cep_cliente,
+     vw_pedidos."tl_cliente" AS vw_pedidos_tl_cliente,
+     vw_pedidos."cl_cliente" AS vw_pedidos_cl_cliente,
+     vw_pedidos."dt_entrega" AS vw_pedidos_dt_entrega,
+     vw_pedidos."dt_vencimento" AS vw_pedidos_dt_vencimento,
+     vw_pedidos."cd_status" AS vw_pedidos_cd_status,
+     vw_pedidos."st_venda" AS vw_pedidos_st_venda,
+     vw_pedidos."cd_vendedor" AS vw_pedidos_cd_vendedor,
+     vw_pedidos."vl_desconto" AS vw_pedidos_vl_desconto,
+     vw_pedidos."vl_pedido" AS vw_pedidos_vl_pedido,
+     vw_pedidos."vl_recebido" AS vw_pedidos_vl_recebido,
+     vw_pedidos."vl_brinde" AS vw_pedidos_vl_brinde,
+     vw_pedidos."pdcdnv" AS vw_pedidos_pdcdnv,
+     vw_pedidos."no_funcionario" AS vw_pedidos_no_funcionario,
+     vw_pedidos."rg_funcionario" AS vw_pedidos_rg_funcionario,
+     vw_pedidos."cpf_funcionario" AS vw_pedidos_cpf_funcionario,
+     vw_pedidos."ed_funcionario" AS vw_pedidos_ed_funcionario,
+     vw_pedidos."uf_funcionario" AS vw_pedidos_uf_funcionario,
+     vw_pedidos."cid_funcionario" AS vw_pedidos_cid_funcionario,
+     vw_pedidos."dt_admissao" AS vw_pedidos_dt_admissao,
+     vw_pedidos."dt_demissao" AS vw_pedidos_dt_demissao,
+     vw_pedidos."cep_funcionario" AS vw_pedidos_cep_funcionario,
+     vw_pedidos."tl_funcionario" AS vw_pedidos_tl_funcionario,
+     vw_pedidos."nr_cc" AS vw_pedidos_nr_cc,
+     vw_pedidos."nr_agencia" AS vw_pedidos_nr_agencia,
+     vw_pedidos."no_banco" AS vw_pedidos_no_banco
+FROM
+     "public"."vw_pedidos" vw_pedidos]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.nome]]></fieldDescription>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.logradouro]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.numero]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.bairro]]></fieldDescription>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.cidade.cidade]]></fieldDescription>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente.cidade.uf]]></fieldDescription>
+	</field>
+	<field name="nome_1" class="java.lang.String">
+		<fieldDescription><![CDATA[equipe.nome]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="valorPedidoSTR" class="java.lang.String">
+		<fieldDescription><![CDATA[valorPedidoSTR]]></fieldDescription>
+	</field>
+	<field name="dataEntregaStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataEntregaStr]]></fieldDescription>
+	</field>
+	<field name="dataVencimentoStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataVencimentoStr]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status.status]]></fieldDescription>
+	</field>
+	<variable name="COUNTER" class="java.lang.Integer">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="258" y="11" width="287" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISGVC - Sistema Gestor de Vendas Consignadas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="34" width="147" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Vendas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="747" y="2" width="56" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="2" width="55" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Vencimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="636" y="2" width="55" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Entrega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="2" width="36" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Valor(R$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="2" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="2" width="125" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="2" width="185" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="527" y="2" width="66" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Nº Pedido]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="17" width="802" height="1" forecolor="#999999" backcolor="#999999"/>
+			</line>
+			<staticText>
+				<reportElement x="441" y="2" width="86" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Equipe]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="15" forecolor="#FFFFFF" backcolor="#F2F1F0">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="747" y="0" width="56" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="690" y="0" width="55" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataVencimentoStr}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="636" y="0" width="55" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataEntregaStr}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="597" y="0" width="36" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorPedidoSTR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="127" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade}+" - "+$F{uf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="125" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="185" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{logradouro}+", "+$F{numero}+"-"+$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="0" width="66" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="86" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="682" y="8" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="8" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="8" width="210" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" forecolor="#999999" backcolor="#999999"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

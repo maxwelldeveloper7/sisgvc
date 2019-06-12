@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="570fcc04-34fe-48f4-920c-1aa37be8c987">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vw_consolidado."codigo" AS vw_consolidado_codigo,
+     vw_consolidado."cliente" AS vw_consolidado_cliente,
+     vw_consolidado."endereco" AS vw_consolidado_endereco,
+     vw_consolidado."numero" AS vw_consolidado_numero,
+     vw_consolidado."bairro" AS vw_consolidado_bairro,
+     vw_consolidado."uf" AS vw_consolidado_uf,
+     vw_consolidado."cidade" AS vw_consolidado_cidade,
+     vw_consolidado."consignados" AS vw_consolidado_consignados,
+     vw_consolidado."pendentes" AS vw_consolidado_pendentes,
+     vw_consolidado."devolvidos" AS vw_consolidado_devolvidos,
+     vw_consolidado."concluidos" AS vw_consolidado_concluidos,
+     vw_consolidado."perdidos" AS vw_consolidado_perdidos
+FROM
+     "public"."vw_consolidado" vw_consolidado]]>
+	</queryString>
+	<field name="vw_consolidado_codigo" class="java.lang.Integer"/>
+	<field name="vw_consolidado_cliente" class="java.lang.String"/>
+	<field name="vw_consolidado_endereco" class="java.lang.String"/>
+	<field name="vw_consolidado_numero" class="java.lang.String"/>
+	<field name="vw_consolidado_bairro" class="java.lang.String"/>
+	<field name="vw_consolidado_uf" class="java.lang.String"/>
+	<field name="vw_consolidado_cidade" class="java.lang.String"/>
+	<field name="vw_consolidado_consignados" class="java.math.BigDecimal"/>
+	<field name="vw_consolidado_pendentes" class="java.math.BigDecimal"/>
+	<field name="vw_consolidado_devolvidos" class="java.math.BigDecimal"/>
+	<field name="vw_consolidado_concluidos" class="java.math.BigDecimal"/>
+	<field name="vw_consolidado_perdidos" class="java.math.BigDecimal"/>
+	<group name="vw_consolidado_cidade">
+		<groupExpression><![CDATA[$F{vw_consolidado_cidade}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement uuid="db52677f-7ad5-49d5-a4e4-5f2f802b2b43" mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF"/>
+					<rectangle>
+						<reportElement uuid="8fea6093-40f3-4cb3-9bc5-f61d6903313f" mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#736343"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement uuid="4bda1d9b-6608-468e-8c2f-b44fbaffcf33" style="SubTitle" x="68" y="0" width="755" height="24" forecolor="#736343"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{vw_consolidado_cidade}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement uuid="c8456446-d15e-4403-bcd4-8d7cea105535" x="0" y="0" width="164" height="126"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="0d166865-24c1-49fc-b38d-63781860e991" style="Title" x="270" y="0" width="263" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="41a547f6-eef6-4793-ab5e-2028443bf90d" style="SubTitle" x="303" y="62" width="196" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4b0ac224-44ec-454a-bbeb-4601ec643a8c" x="172" y="94" width="383" height="42"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="186ec543-2f5e-4bcc-8460-b5bd07301d5c" x="633" y="-73" width="219" height="209"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="b34665a4-2c54-4d86-9bcf-8dae3987f092" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="9f327ca1-2d66-4561-a137-baa8b9953bf7" style="Column header" x="0" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb7b19a9-0571-4b52-9d54-f11f947212c2" style="Column header" x="72" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dc21a8fa-0379-4d7e-8360-c8871c52b9d8" style="Column header" x="144" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_endereco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a015a7f7-23a4-45b9-a81d-1ffb0c9eacd3" style="Column header" x="216" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_numero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c11f36f-76ca-480e-a5a5-a78f06c90eda" style="Column header" x="288" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_bairro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d53e374-021a-418b-8011-ce30cea50bf8" style="Column header" x="360" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_uf]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d3217bea-1b00-481e-b42c-40750d1d67a7" style="Column header" x="432" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_consignados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="38fb43a0-0667-4b37-a543-312d363b40c8" style="Column header" x="504" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_pendentes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="81a537f6-9eee-43f6-bef0-3f94e47f5b18" style="Column header" x="576" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_devolvidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44fd93a2-bbe0-4e5c-9091-fe2c2679f76b" style="Column header" x="648" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_concluidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="570d5259-f77f-479b-9e8d-bf06893c794f" style="Column header" x="720" y="0" width="72" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[vw_consolidado_perdidos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="8458cddf-8922-4486-900d-98df8f86d8b3" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f7a538ec-28e3-4590-9eeb-bc9a507c852a" style="Detail" x="0" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_codigo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="55137ea3-1c72-40f5-952b-357a04716ae7" style="Detail" x="72" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="25999deb-c5ea-49ce-b38f-76dae15913e1" style="Detail" x="144" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_endereco}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="b114a42c-d44c-47dd-b070-282ae4e40a36" style="Detail" x="216" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_numero}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="0a725366-d8c3-4891-a33b-8ab88787328f" style="Detail" x="288" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_bairro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="9a02a44e-dab7-43b8-aef0-7cd4d5ceeb24" style="Detail" x="360" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_uf}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="815dd3d1-fe7b-469c-bf24-cc31ab4def29" style="Detail" x="432" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_consignados}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="0ec22064-4acb-4bbf-a0c8-a24e2c3eaf34" style="Detail" x="504" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_pendentes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="edaaba74-0e36-42b0-ae8c-a135db05cdbc" style="Detail" x="576" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_devolvidos}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="9f6ff1e2-df78-4911-bdae-7679555ee888" style="Detail" x="648" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_concluidos}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="61702b70-e92c-499a-a46f-52bce74dbdbd" style="Detail" x="720" y="0" width="72" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{vw_consolidado_perdidos}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="413cbb76-cf09-4686-9353-7b04214809e5" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="df552897-309f-4292-8636-0268b33278b1" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="b0e98678-63ed-4be6-8a09-5ea46163a7dd" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e9d21b72-ba26-4842-8f66-22c4442fa3f5" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="36cf63ac-6600-4925-8d49-976d690e2591" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
