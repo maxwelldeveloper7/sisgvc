@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class ConexaoPostgres{
 
     private static Connection con = null;    
-    private static final String URL = "jdbc:postgresql://10.0.0.101/SAC"; //servidor 10.0.0.101
+    private static final String URL = "jdbc:postgresql://localhost/SAC"; //servidor 10.0.0.101
     private static final String DRIVER = "org.postgresql.Driver";
     private static final String USER = "postgres";
     private static final String PASSWORD = "311208";
