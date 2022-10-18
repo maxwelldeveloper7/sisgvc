@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vendas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="85a5722b-868d-4f61-9902-fc1955788276">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="concluido" class="java.lang.Integer">
+		<fieldDescription><![CDATA[concluido]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[bairro]]></fieldDescription>
+	</field>
+	<field name="perdido" class="java.lang.Integer">
+		<fieldDescription><![CDATA[perdido]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="consignado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[consignado]]></fieldDescription>
+	</field>
+	<field name="pendente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[pendente]]></fieldDescription>
+	</field>
+	<field name="devolvido" class="java.lang.Integer">
+		<fieldDescription><![CDATA[devolvido]]></fieldDescription>
+	</field>
+	<field name="nomeCidade" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeCidade]]></fieldDescription>
+	</field>
+	<field name="nomeCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeCliente]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[endereco]]></fieldDescription>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<fieldDescription><![CDATA[uf]]></fieldDescription>
+	</field>
+	<variable name="COUNTER" class="java.lang.Integer">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<group name="Cidade" minHeightToStartNewPage="20">
+		<groupExpression><![CDATA[$F{nomeCidade}+" - "+$F{uf}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement uuid="43c10b4b-b7a8-42d0-b85d-cae3d1cbb8c0" x="2" y="3" width="208" height="17"/>
+					<textElement>
+						<font fontName="Courier New" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nomeCidade}+" - "+$F{uf}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="00218b59-d319-4887-81dc-633dbdfcbdf6" x="258" y="11" width="287" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISGVC - Sistema Gestor de Vendas Consignadas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2271bf92-245d-4ae2-9e62-3ffbe1713116" x="232" y="34" width="339" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório Condensado  de Pedidos por Clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement uuid="5d526e1a-2ef5-4960-bd07-c418d40e48e8" x="0" y="32" width="802" height="1" forecolor="#999999" backcolor="#999999"/>
+			</line>
+			<staticText>
+				<reportElement uuid="d447f584-5032-486b-b2c8-e914ef562749" x="0" y="2" width="49" height="30"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="64eeea52-e32e-4c8e-b409-fd009cb487c1" x="49" y="2" width="175" height="30"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe6b0386-a6c8-4abe-b2c4-4d938d79848c" x="229" y="2" width="218" height="30"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1eab5e70-2231-4609-b919-acf26b55a3c5" x="452" y="17" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consignados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d6b30926-a880-4761-b139-9b72211f4834" x="522" y="17" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pendentes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d29a3cd-296d-4da2-a0e2-6dde66086997" x="592" y="17" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Devolvidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20a914e7-426f-439f-8e98-eab43cc284f6" x="662" y="17" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Concluídos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c7d218a8-98ba-494d-91af-d16ee16f579e" x="732" y="17" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Perdidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2e2e0d6f-f153-4cb8-9e34-4da46103ce87" x="452" y="2" width="350" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status dos Pedidos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15">
+			<rectangle>
+				<reportElement uuid="8cbdf89a-dfe2-442a-9cb3-5235f6674342" x="0" y="0" width="802" height="15" forecolor="#FFFFFF" backcolor="#F2F1F0">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="19ef12c1-b634-4a9d-8dde-cc3d3c697ce5" x="50" y="0" width="174" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="178b72f0-e38c-4995-92f1-265aa9536fb0" x="1" y="0" width="49" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="55f848f5-457c-44fe-b86a-b9b9cc994522" x="229" y="0" width="218" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}+"," +$F{numero}+" - "+$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="33dbbeb8-8ed8-4aea-99cc-ba51cdecc958" x="452" y="0" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consignado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="25c6eb16-dedf-4831-893f-85c1b6e76561" x="522" y="0" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pendente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6c76ec35-8f05-4557-8f9a-8db425ee8c1b" x="592" y="0" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{devolvido}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3889ad9a-6e27-46cf-b0bb-c122d551b369" x="662" y="0" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{concluido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64c6eb5d-451c-4a57-bdb9-b4e5b49c2694" x="732" y="0" width="70" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perdido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement uuid="df371246-fa59-47ce-a082-3db2e2051adf" x="682" y="8" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="73d9d05a-e2a9-4149-976f-fb9a96ac6ce6" x="762" y="8" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="a73d43d3-882f-4581-ae88-8125e4e1a169" x="0" y="8" width="210" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8a6a1ea0-1762-48a0-afd6-0bfb16306e28" x="0" y="0" width="802" height="1" forecolor="#999999" backcolor="#999999"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

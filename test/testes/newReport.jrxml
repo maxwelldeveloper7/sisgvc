@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     funcionarios."id" AS funcionarios_id,
+     vendas."cd_vendedor" AS vendas_cd_vendedor,
+     funcionarios."no_funcionario" AS funcionarios_no_funcionario,
+     vendas."id" AS vendas_id,
+     status_vendas."st_venda" AS status_vendas_st_venda,
+     vendas."dt_vencimento" AS vendas_dt_vencimento
+FROM
+     "public"."status_vendas" status_vendas INNER JOIN "public"."vendas" vendas ON status_vendas."id" = vendas."cd_status"
+     INNER JOIN "public"."funcionarios" funcionarios ON vendas."cd_vendedor" = funcionarios."id"]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="cliente" class="br.com.devmax.sisgvc.modelo.ClienteBean">
+		<fieldDescription><![CDATA[cliente]]></fieldDescription>
+	</field>
+	<field name="comissao" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[comissao]]></fieldDescription>
+	</field>
+	<field name="comissaoSTR" class="java.lang.String">
+		<fieldDescription><![CDATA[comissaoSTR]]></fieldDescription>
+	</field>
+	<field name="dataEntrega" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataEntrega]]></fieldDescription>
+	</field>
+	<field name="dataEntregaStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataEntregaStr]]></fieldDescription>
+	</field>
+	<field name="dataVencimento" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataVencimento]]></fieldDescription>
+	</field>
+	<field name="dataVencimentoStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataVencimentoStr]]></fieldDescription>
+	</field>
+	<field name="equipe" class="br.com.devmax.sisgvc.modelo.EquipeBean">
+		<fieldDescription><![CDATA[equipe]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="itensDeVenda" class="java.util.List">
+		<fieldDescription><![CDATA[itensDeVenda]]></fieldDescription>
+	</field>
+	<field name="status" class="br.com.devmax.sisgvc.modelo.StatusVendaBean">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="valorPedido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[valorPedido]]></fieldDescription>
+	</field>
+	<field name="valorPedidoSTR" class="java.lang.String">
+		<fieldDescription><![CDATA[valorPedidoSTR]]></fieldDescription>
+	</field>
+	<field name="valorRecebido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[valorRecebido]]></fieldDescription>
+	</field>
+	<field name="valorRecebidoSTR" class="java.lang.String">
+		<fieldDescription><![CDATA[valorRecebidoSTR]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="br.com.devmax.sisgvc.modelo.FuncionarioBean">
+		<fieldDescription><![CDATA[vendedor]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="79"/>
+	</title>
+	<pageHeader>
+		<band height="35"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61"/>
+	</columnHeader>
+	<detail>
+		<band height="125"/>
+	</detail>
+	<columnFooter>
+		<band height="45"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>
